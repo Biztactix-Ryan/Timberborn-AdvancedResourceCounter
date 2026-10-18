@@ -64,8 +64,8 @@ Defaults assume Steam on Linux/Proton; on Windows, pass `GamePath` and `ModsPath
 ### Releasing
 
 GitHub Actions builds every push against reference-only copies of the game assemblies
-(kept in a private repo, `Biztactix-Ryan/Timberborn-Stubs`, pinned by `TIMBERBORN_VERSION`
-in `.github/workflows/build.yml`), and publishes a release when a `v*` tag is pushed.
+([Timberborn-BuildDLLStubs](https://github.com/Biztactix-Ryan/Timberborn-BuildDLLStubs), pinned by
+`TIMBERBORN_VERSION` in `.github/workflows/build.yml`), and publishes a release when a `v*` tag is pushed.
 
 1. Bump `Version` in `Mod/manifest.json` and add a section to `CHANGELOG.md`; commit.
 2. Run `scripts/tag-release.sh`. It pushes `vX.Y.Z`, and CI attaches

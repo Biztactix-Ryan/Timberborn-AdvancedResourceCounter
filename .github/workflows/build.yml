@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  # Tag in Biztactix-Ryan/Timberborn-Stubs to compile against; bump after regenerating stubs.
+  # Tag in Biztactix-Ryan/Timberborn-BuildDLLStubs to compile against; bump after regenerating stubs.
   TIMBERBORN_VERSION: 1.1.2.8
 
 jobs:
@@ -16,43 +16,24 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    outputs:
-      built: ${{ steps.key.outputs.present }}
     steps:
       - uses: actions/checkout@v4
 
-      # Secrets aren't passed to pull requests from forks, so those can't fetch the stubs.
-      - name: Check for stubs key
-        id: key
-        env:
-          KEY: ${{ secrets.TIMBERBORN_STUBS_KEY }}
-        run: |
-          if [ -n "$KEY" ]; then
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "::warning::TIMBERBORN_STUBS_KEY is not available; skipping the build."
-          fi
-
       - name: Check out Timberborn reference assemblies
-        if: steps.key.outputs.present == 'true'
         uses: actions/checkout@v4
         with:
-          repository: Biztactix-Ryan/Timberborn-Stubs
+          repository: Biztactix-Ryan/Timberborn-BuildDLLStubs
           ref: ${{ env.TIMBERBORN_VERSION }}
-          ssh-key: ${{ secrets.TIMBERBORN_STUBS_KEY }}
           path: timberborn
 
       - uses: actions/setup-dotnet@v4
-        if: steps.key.outputs.present == 'true'
         with:
           dotnet-version: 8.0.x
 
       - name: Build and package
-        if: steps.key.outputs.present == 'true'
         run: scripts/package.sh -p:GamePath="$GITHUB_WORKSPACE/timberborn"
 
       - uses: actions/upload-artifact@v4
-        if: steps.key.outputs.present == 'true'
         with:
           name: AdvancedResourceCounter
           path: dist/AdvancedResourceCounter-v*.zip
@@ -60,7 +41,7 @@ jobs:
 
   release:
     needs: build
-    if: startsWith(github.ref, 'refs/tags/v') && needs.build.outputs.built == 'true'
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     permissions:
       contents: write
