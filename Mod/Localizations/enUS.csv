@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Advanced Resource Counter,
+Building.AdvancedResourceCounter.Description,"Turns ON when the stock of a good falls below the low threshold, and stays ON until it reaches the high threshold.",
+AdvancedResourceCounter.OnBelow,ON below,Label next to the low threshold input
+AdvancedResourceCounter.OffAt,OFF at,Label next to the high threshold input
+AdvancedResourceCounter.OnBelowPercent,Turn ON below: {0},{0} is a percentage
+AdvancedResourceCounter.OffAtPercent,Turn OFF at: {0},{0} is a percentage
+AdvancedResourceCounter.StateOn,Refilling - signal ON,
+AdvancedResourceCounter.StateOff,Stocked - signal OFF,

@@ -1,0 +1,8 @@
+{
+  "Name": "Advanced Resource Counter",
+  "Version": "1.0.0",
+  "Id": "BizTactix.AdvancedResourceCounter",
+  "MinimumGameVersion": "1.1.2.0",
+  "Description": "Adds an Advanced Resource Counter automation building: a resource counter with built-in memory (hysteresis). It turns ON when a good drops below a low threshold and stays ON until the stock reaches a high threshold - replacing the usual two counters + memory setup.",
+  "RequiredMods": []
+}

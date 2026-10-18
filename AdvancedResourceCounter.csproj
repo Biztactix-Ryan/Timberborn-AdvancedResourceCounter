@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>AdvancedResourceCounter</AssemblyName>
+    <RootNamespace>AdvancedResourceCounter</RootNamespace>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+
+    <!-- Override on the command line: dotnet build -p:GamePath=... -->
+    <GamePath Condition="'$(GamePath)' == ''">$(HOME)/.steam/steam/steamapps/common/Timberborn</GamePath>
+    <ManagedPath>$(GamePath)/Timberborn_Data/Managed</ManagedPath>
+    <!-- Proton prefix Documents folder; on Windows use %USERPROFILE%\Documents\Timberborn\Mods -->
+    <ModsPath Condition="'$(ModsPath)' == ''">$(HOME)/.steam/steam/steamapps/compatdata/1062090/pfx/drive_c/users/steamuser/Documents/Timberborn/Mods</ModsPath>
+    <DistPath>$(MSBuildProjectDirectory)/dist/AdvancedResourceCounter</DistPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="dist/**;Mod/**" />
+    <Reference Include="$(ManagedPath)/Timberborn.*.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/Bindito.Core.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/UnityEngine.UIElementsModule.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/UnityEngine.TextRenderingModule.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/System.Memory.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/System.Collections.Immutable.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/netstandard.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/mscorlib.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/System.dll" Private="false" />
+    <Reference Include="$(ManagedPath)/System.Core.dll" Private="false" />
+  </ItemGroup>
+
+  <!-- Assemble the mod folder: Mod/* + the compiled DLL under Scripts/ -->
+  <Target Name="AssembleMod" AfterTargets="Build">
+    <ItemGroup>
+      <ModFiles Include="Mod/**/*" />
+    </ItemGroup>
+    <RemoveDir Directories="$(DistPath)" />
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(DistPath)/%(RecursiveDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(DistPath)/Scripts" />
+    <Message Importance="high" Text="Mod assembled at $(DistPath)" />
+  </Target>
+
+  <!-- dotnet build -p:Deploy=true copies the mod into the game's Mods folder -->
+  <Target Name="DeployMod" AfterTargets="AssembleMod" Condition="'$(Deploy)' == 'true'">
+    <ItemGroup>
+      <DistFiles Include="$(DistPath)/**/*" />
+    </ItemGroup>
+    <RemoveDir Directories="$(ModsPath)/AdvancedResourceCounter" />
+    <Copy SourceFiles="@(DistFiles)" DestinationFolder="$(ModsPath)/AdvancedResourceCounter/%(RecursiveDir)" />
+    <Message Importance="high" Text="Mod deployed to $(ModsPath)/AdvancedResourceCounter" />
+  </Target>
+
+</Project>
