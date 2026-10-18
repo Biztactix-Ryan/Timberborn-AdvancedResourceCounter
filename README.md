@@ -32,9 +32,9 @@ warehouse is back up to 200, instead of flickering on and off around a single va
 
 ## Installation
 
-**Mod.io / Workshop:** subscribe and enable it in the in-game mod manager.
+**Steam Workshop / mod.io:** subscribe and enable it in the in-game mod manager.
 
-**Manual:** download the release zip and extract the `AdvancedResourceCounter` folder into your
+**Manual:** download the zip from the [latest release](https://github.com/Biztactix-Ryan/Timberborn-AdvancedResourceCounter/releases/latest) and extract the `AdvancedResourceCounter` folder into your
 Timberborn mods folder:
 
 - Windows: `Documents\Timberborn\Mods\`
@@ -61,10 +61,23 @@ Defaults assume Steam on Linux/Proton; on Windows, pass `GamePath` and `ModsPath
 - `Mod/` – manifest, blueprints (cloned from the vanilla Resource Counter, reusing its model),
   template-collection appends, localization
 
+### Releasing
+
+1. Bump `Version` in `Mod/manifest.json` and add a section to `CHANGELOG.md`.
+2. Commit, then run `scripts/release.sh` (`--dry-run` to preview). It builds, zips
+   `dist/AdvancedResourceCounter-vX.Y.Z.zip` and creates the GitHub release with the changelog notes.
+3. Upload the same zip to [mod.io](https://mod.io/g/timberborn), and use the in-game
+   Mod Manager's upload panel for the Steam Workshop.
+
+After the first Workshop upload, copy `workshop_data.json` from the deployed mod folder into
+`Mod/` and commit it. It holds the Workshop item ID, so later uploads from any machine
+update the same item. (`-p:Deploy=true` never deletes it from the Mods folder.)
+
 ## Localization
 
-Strings live in `Mod/Localizations/enUS.csv`. Translations are welcome — copy the file to your
-locale (e.g. `deDE.csv`) and open a pull request.
+The mod ships all 15 languages the game supports. English is the source (`Mod/Localizations/enUS.csv`);
+the others reuse the game's own terms but were written by a non-native speaker, so corrections are
+very welcome — edit the CSV for your language and open a pull request, or file an issue.
 
 ## License
 

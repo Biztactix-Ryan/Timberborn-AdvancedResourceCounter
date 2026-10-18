@@ -1,0 +1,9 @@
+name: Feature request or translation fix
+description: Suggest an improvement or correct a translation
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+    validations:
+      required: true

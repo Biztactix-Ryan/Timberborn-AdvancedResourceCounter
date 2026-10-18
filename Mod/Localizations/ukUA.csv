@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Розширений лічильник ресурсів,
+Building.AdvancedResourceCounter.Description,"Вмикається, коли запас товару падає нижче нижнього порогу, і залишається ввімкненим, доки не досягне верхнього порогу.",
+AdvancedResourceCounter.OnBelow,УВІМК нижче,
+AdvancedResourceCounter.OffAt,ВИМК від,
+AdvancedResourceCounter.OnBelowPercent,Увімкнути нижче: {0},
+AdvancedResourceCounter.OffAtPercent,Вимкнути від: {0},
+AdvancedResourceCounter.StateOn,Поповнення - сигнал УВІМК,
+AdvancedResourceCounter.StateOff,Запас у нормі - сигнал ВИМК,

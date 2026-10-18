@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Compteur de ressources avancé,
+Building.AdvancedResourceCounter.Description,"S'active quand le stock d'une ressource passe sous le seuil bas, et reste actif jusqu'à ce qu'il atteigne le seuil haut.",
+AdvancedResourceCounter.OnBelow,ON sous,
+AdvancedResourceCounter.OffAt,OFF à,
+AdvancedResourceCounter.OnBelowPercent,ON sous : {0},
+AdvancedResourceCounter.OffAtPercent,OFF à : {0},
+AdvancedResourceCounter.StateOn,Réapprovisionnement - signal ON,
+AdvancedResourceCounter.StateOff,Approvisionné - signal OFF,

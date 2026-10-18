@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Contador de recursos avançado,
+Building.AdvancedResourceCounter.Description,Liga quando o estoque de uma mercadoria cai abaixo do limite inferior e permanece ligado até atingir o limite superior.,
+AdvancedResourceCounter.OnBelow,Liga abaixo,
+AdvancedResourceCounter.OffAt,Desliga em,
+AdvancedResourceCounter.OnBelowPercent,Ligar abaixo de: {0},
+AdvancedResourceCounter.OffAtPercent,Desligar em: {0},
+AdvancedResourceCounter.StateOn,Reabastecendo - sinal ligado,
+AdvancedResourceCounter.StateOff,Abastecido - sinal desligado,

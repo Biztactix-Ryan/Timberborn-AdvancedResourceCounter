@@ -44,12 +44,16 @@
     <Message Importance="high" Text="Mod assembled at $(DistPath)" />
   </Target>
 
-  <!-- dotnet build -p:Deploy=true copies the mod into the game's Mods folder -->
+  <!-- dotnet build -p:Deploy=true copies the mod into the game's Mods folder.
+       workshop_data.json (written by the in-game Steam uploader) is kept so the next upload
+       updates the existing Workshop item instead of creating a new one. -->
   <Target Name="DeployMod" AfterTargets="AssembleMod" Condition="'$(Deploy)' == 'true'">
     <ItemGroup>
       <DistFiles Include="$(DistPath)/**/*" />
+      <StaleFiles Include="$(ModsPath)/AdvancedResourceCounter/**/*"
+                  Exclude="$(ModsPath)/AdvancedResourceCounter/workshop_data.json" />
     </ItemGroup>
-    <RemoveDir Directories="$(ModsPath)/AdvancedResourceCounter" />
+    <Delete Files="@(StaleFiles)" />
     <Copy SourceFiles="@(DistFiles)" DestinationFolder="$(ModsPath)/AdvancedResourceCounter/%(RecursiveDir)" />
     <Message Importance="high" Text="Mod deployed to $(ModsPath)/AdvancedResourceCounter" />
   </Target>

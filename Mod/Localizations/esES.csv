@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Contador de recursos avanzado,
+Building.AdvancedResourceCounter.Description,Se activa (ON) cuando las existencias de un bien bajan del umbral inferior y sigue activo hasta alcanzar el umbral superior.,
+AdvancedResourceCounter.OnBelow,ON bajo,
+AdvancedResourceCounter.OffAt,OFF en,
+AdvancedResourceCounter.OnBelowPercent,ON por debajo de: {0},
+AdvancedResourceCounter.OffAtPercent,OFF al llegar a: {0},
+AdvancedResourceCounter.StateOn,Reponiendo - señal ON,
+AdvancedResourceCounter.StateOff,Abastecido - señal OFF,

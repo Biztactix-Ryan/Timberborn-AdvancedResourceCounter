@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,ตัวนับทรัพยากรขั้นสูง,
+Building.AdvancedResourceCounter.Description,เปิดเมื่อสิ่งของในคลังต่ำกว่าเกณฑ์ล่าง และเปิดค้างไว้จนกว่าจะถึงเกณฑ์บน,
+AdvancedResourceCounter.OnBelow,เปิดเมื่อต่ำกว่า,
+AdvancedResourceCounter.OffAt,ปิดเมื่อถึง,
+AdvancedResourceCounter.OnBelowPercent,เปิดเมื่อต่ำกว่า: {0},
+AdvancedResourceCounter.OffAtPercent,ปิดเมื่อถึง: {0},
+AdvancedResourceCounter.StateOn,กำลังเติม - สัญญาณเปิด,
+AdvancedResourceCounter.StateOff,มีเพียงพอ - สัญญาณปิด,

@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Gelişmiş Kaynak Sayacı,
+Building.AdvancedResourceCounter.Description,Bir malın stoku alt eşiğin altına düştüğünde açılır ve üst eşiğe ulaşana kadar açık kalır.,
+AdvancedResourceCounter.OnBelow,AÇ: alt,
+AdvancedResourceCounter.OffAt,KAPAT: üst,
+AdvancedResourceCounter.OnBelowPercent,Açma eşiği: {0},
+AdvancedResourceCounter.OffAtPercent,Kapatma eşiği: {0},
+AdvancedResourceCounter.StateOn,Dolduruluyor - sinyal AÇIK,
+AdvancedResourceCounter.StateOff,Stokta - sinyal KAPALI,

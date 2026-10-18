@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Продвинутый счётчик ресурсов,
+Building.AdvancedResourceCounter.Description,"Включается, когда запас продукта падает ниже нижнего порога, и остаётся включённым, пока не достигнет верхнего порога.",
+AdvancedResourceCounter.OnBelow,ВКЛ ниже,
+AdvancedResourceCounter.OffAt,ВЫКЛ от,
+AdvancedResourceCounter.OnBelowPercent,Включить ниже: {0},
+AdvancedResourceCounter.OffAtPercent,Выключить от: {0},
+AdvancedResourceCounter.StateOn,Пополнение - сигнал ВКЛ,
+AdvancedResourceCounter.StateOff,Запас в норме - сигнал ВЫКЛ,

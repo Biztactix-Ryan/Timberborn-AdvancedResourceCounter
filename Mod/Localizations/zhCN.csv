@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,高级资源统计点,
+Building.AdvancedResourceCounter.Description,当商品库存低于下限时开启，并保持开启直到达到上限。,
+AdvancedResourceCounter.OnBelow,开启下限,
+AdvancedResourceCounter.OffAt,关闭上限,
+AdvancedResourceCounter.OnBelowPercent,低于此值开启：{0},
+AdvancedResourceCounter.OffAtPercent,达到此值关闭：{0},
+AdvancedResourceCounter.StateOn,补货中 - 信号开,
+AdvancedResourceCounter.StateOff,库存充足 - 信号关,

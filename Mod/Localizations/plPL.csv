@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Zaawansowany licznik zasobów,
+Building.AdvancedResourceCounter.Description,"Włącza się, gdy zapas danego zasobu spadnie poniżej dolnego progu, i pozostaje włączony, dopóki nie osiągnie górnego progu.",
+AdvancedResourceCounter.OnBelow,WŁ. poniżej,
+AdvancedResourceCounter.OffAt,WYŁ. od,
+AdvancedResourceCounter.OnBelowPercent,Włącz poniżej: {0},
+AdvancedResourceCounter.OffAtPercent,Wyłącz od: {0},
+AdvancedResourceCounter.StateOn,Uzupełnianie - sygnał WŁ.,
+AdvancedResourceCounter.StateOff,Zaopatrzone - sygnał WYŁ.,

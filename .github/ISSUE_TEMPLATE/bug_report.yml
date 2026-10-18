@@ -1,0 +1,48 @@
+name: Bug report
+description: Something isn't working as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: game-version
+    attributes:
+      label: Timberborn version
+      description: Shown in the bottom corner of the main menu.
+      placeholder: e.g. 1.1.2.0
+    validations:
+      required: true
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod version
+      placeholder: e.g. 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: faction
+    attributes:
+      label: Faction
+      options: [Folktails, Iron Teeth, Both]
+  - type: input
+    id: source
+    attributes:
+      label: Installed from
+      placeholder: Steam Workshop / mod.io / GitHub release
+  - type: textarea
+    id: other-mods
+    attributes:
+      label: Other mods enabled
+  - type: textarea
+    id: log
+    attributes:
+      label: Player.log
+      description: >
+        Windows: %USERPROFILE%\AppData\LocalLow\Mechanistry\Timberborn\Player.log —
+        attach the file or paste any errors mentioning AdvancedResourceCounter.
+      render: text

@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Erweiterter Ressourcenzähler,
+Building.AdvancedResourceCounter.Description,"Schaltet sich EIN, wenn der Bestand eines Guts unter den unteren Schwellenwert fällt, und bleibt EIN, bis er den oberen Schwellenwert erreicht.",
+AdvancedResourceCounter.OnBelow,EIN unter,
+AdvancedResourceCounter.OffAt,AUS ab,
+AdvancedResourceCounter.OnBelowPercent,EIN unter: {0},
+AdvancedResourceCounter.OffAtPercent,AUS ab: {0},
+AdvancedResourceCounter.StateOn,Wird aufgefüllt - Signal EIN,
+AdvancedResourceCounter.StateOff,Vorrätig - Signal AUS,

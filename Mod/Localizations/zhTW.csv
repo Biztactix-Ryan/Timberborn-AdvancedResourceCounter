@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,進階資源計數器,
+Building.AdvancedResourceCounter.Description,當物資庫存低於下限時開啟，並保持開啟直到達到上限。,
+AdvancedResourceCounter.OnBelow,開啟下限,
+AdvancedResourceCounter.OffAt,關閉上限,
+AdvancedResourceCounter.OnBelowPercent,低於此值開啟：{0},
+AdvancedResourceCounter.OffAtPercent,達到此值關閉：{0},
+AdvancedResourceCounter.StateOn,補貨中 - 訊號開,
+AdvancedResourceCounter.StateOff,庫存充足 - 訊號關,

@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,高度な資源カウンター,
+Building.AdvancedResourceCounter.Description,物の在庫が下限を下回るとオンになり、上限に達するまでオンのままになる。,
+AdvancedResourceCounter.OnBelow,オン：下限,
+AdvancedResourceCounter.OffAt,オフ：上限,
+AdvancedResourceCounter.OnBelowPercent,オンになる下限：{0},
+AdvancedResourceCounter.OffAtPercent,オフになる上限：{0},
+AdvancedResourceCounter.StateOn,補充中 - 信号オン,
+AdvancedResourceCounter.StateOff,在庫十分 - 信号オフ,

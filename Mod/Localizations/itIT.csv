@@ -1,0 +1,9 @@
+ID,Text,Comment
+Building.AdvancedResourceCounter.DisplayName,Conta-risorse avanzato,
+Building.AdvancedResourceCounter.Description,Si attiva quando le scorte di una merce scendono sotto la soglia minima e resta attivo finché non raggiungono la soglia massima.,
+AdvancedResourceCounter.OnBelow,ON sotto,
+AdvancedResourceCounter.OffAt,OFF a,
+AdvancedResourceCounter.OnBelowPercent,ON sotto: {0},
+AdvancedResourceCounter.OffAtPercent,OFF a: {0},
+AdvancedResourceCounter.StateOn,In rifornimento - segnale ON,
+AdvancedResourceCounter.StateOff,Rifornito - segnale OFF,
