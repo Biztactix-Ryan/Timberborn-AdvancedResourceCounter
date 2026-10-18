@@ -63,11 +63,18 @@ Defaults assume Steam on Linux/Proton; on Windows, pass `GamePath` and `ModsPath
 
 ### Releasing
 
-1. Bump `Version` in `Mod/manifest.json` and add a section to `CHANGELOG.md`.
-2. Commit, then run `scripts/release.sh` (`--dry-run` to preview). It builds, zips
-   `dist/AdvancedResourceCounter-vX.Y.Z.zip` and creates the GitHub release with the changelog notes.
+GitHub Actions builds every push against reference-only copies of the game assemblies
+(kept in a private repo, `Biztactix-Ryan/Timberborn-Stubs`, pinned by `TIMBERBORN_VERSION`
+in `.github/workflows/build.yml`), and publishes a release when a `v*` tag is pushed.
+
+1. Bump `Version` in `Mod/manifest.json` and add a section to `CHANGELOG.md`; commit.
+2. Run `scripts/tag-release.sh`. It pushes `vX.Y.Z`, and CI attaches
+   `AdvancedResourceCounter-vX.Y.Z.zip` to a release with that version's changelog notes.
 3. Upload the same zip to [mod.io](https://mod.io/g/timberborn), and use the in-game
    Mod Manager's upload panel for the Steam Workshop.
+
+`scripts/package.sh` builds the same zip locally. After a game update, regenerate the stubs
+(see that repo's README) and bump `TIMBERBORN_VERSION`.
 
 After the first Workshop upload, copy `workshop_data.json` from the deployed mod folder into
 `Mod/` and commit it. It holds the Workshop item ID, so later uploads from any machine
